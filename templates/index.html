@@ -1,0 +1,18 @@
+<html>
+<title>{% block title%} Url Shortner {% endblock%}</title>
+<body >
+	<div style="top:40px;padding-left:40px;color:green;"><h1>Url shortner</h1></div>
+	
+	<div style="padding-top:50px;padding-left:200px;">
+
+	<form method='post'>
+		{%csrf_token%}
+		<input type='url' name="longurl" style="width:300px;height:40px;border:solid 1px;border-color:green;" placeholder="URL to Shrink" />
+		<input type="submit" value='Shirnk' style="width:100px;height:40px;border:solid 1px;background-color:green;color:white;" />
+	</form>
+	{%if message%}
+		<font color="green">{{message}}</font> <a href="{{short}}" target="_blank">{{short}}</a>
+	{%endif%}
+	</div>
+</body>
+</html>
